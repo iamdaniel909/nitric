@@ -1,6 +1,15 @@
 package ch.fhnw.broom.data.domain;
 
 import java.lang.annotation.Inherited;
+import java.util.Date;
+import jakarta.persistance.Id;
+import jakarta.persistance.GeneratedValue;
+import jakarta.persistance.GenerationType;
+import jakarta.persistance.Column;
+import jakarta.persistance.Entity;
+import jakarta.persistance.Table;
+import jakarta.persistance.ManyToMany;
+
 
 @Entity
 @Table(name = "orders")
