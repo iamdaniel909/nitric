@@ -30,7 +30,7 @@ public class Product {
     private String productGroup;
 
     @OneToMany
-    private Product product
+    private Product product;
 
     public Long getId() {
         return id;
