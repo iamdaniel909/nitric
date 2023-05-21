@@ -29,8 +29,8 @@ public class Product {
     @Column(name = "product_group")
     private String productGroup;
 
-    @OneToMany
-    private Product product;
+    @ManyToOne
+    private Catalogue catalogue;
 
     public Long getId() {
         return id;
