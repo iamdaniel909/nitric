@@ -29,7 +29,7 @@ public class Product {
     @Column(name = "product_group")
     private String productGroup;
 
-    @ManyToOne
+    @ManyToOne (mappedBy = "product")
     private Catalogue catalogue;
 
     public Long getId() {

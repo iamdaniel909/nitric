@@ -26,7 +26,7 @@ public class Timetable {
     @Column(name = "Course")
     private String course;
 
-    @ManyToOne
+    @OneToMany(mappedBy = "timetable")
     private Student student;
 
     public Timetable() {

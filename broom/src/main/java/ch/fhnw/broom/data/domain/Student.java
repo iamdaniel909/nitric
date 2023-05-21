@@ -34,7 +34,7 @@ public class Student {
     @Column(name = "SchoolYear")
     private String schoolyear;
 
-    @OneToMany
+    @OneToMany (mappedBy = "student")
     private Order order;
 
     @JsonIgnore
