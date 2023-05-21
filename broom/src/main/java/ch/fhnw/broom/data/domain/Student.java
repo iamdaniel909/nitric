@@ -1,33 +1,66 @@
 package ch.fhnw.broom.data.domain;
 
-import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
-public class Student [
+@Entity
+@Table(name = "student")
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long id;
-    private String name;
-    private String firstname;
-    private String birthdate;
-    private String Address;
-    private String House;
-    private String SchoolYear;
-    private String email;
-    private String password;
-    private String role;
-    private String token;
-    private String tokenExpiration;
-    private String tokenCreation;
-    private String tokenUsage;
-    private String tokenValid;
-    private String tokenInvalid;
-    private String tokenExpired;
-    private String tokenUsed;
-    private String tokenNotUsed;
-    private String tokenNotValid;
-    private String tokenNotInvalid;
-    private String tokenNotExpired;
-    ]
 
+    @Column(name = "studentFame")
+    private String fname;
+
+    @Column(name = "studentLname")
+    private String lname;
+
+    @Column(name = "Birthdate")
+    private String birthdate;
+
+    @Column(name = "Adress")
+    private String adress;
+
+    @Column(name = "House")
+    private String house;
+
+    @Column(name = "SchoolYear")
+    private String schoolyear;
+    
+    @Id
+    private String email;
+
+    private String name;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "student")
+    private List<Booking> bookings;
+
+    public Student() {
+    }
+
+    public Student(String email, String name) {
+        this.email = email;
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+}
