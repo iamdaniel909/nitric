@@ -9,7 +9,11 @@ import ch.fhnw.broom.domain.Product;
 
 @Repository 
 public interface ProductRepository extends JpaRepository<Product, Long> {
+    List<Product> findAll();
     Product findByProductName(String productName);
+    Product findByProductId(Long productId);
     List<Product> findByNameContaining(String name);
+    List<Product> findByDescriptionContaining(String description);
+
     
 }
