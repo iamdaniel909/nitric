@@ -7,7 +7,13 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 public class Student [
+    private Long id;
     private String name;
+    private String firstname;
+    private String birthdate;
+    private String Address;
+    private String House;
+    private String SchoolYear;
     private String email;
     private String password;
     private String role;
@@ -23,5 +29,5 @@ public class Student [
     private String tokenNotValid;
     private String tokenNotInvalid;
     private String tokenNotExpired;
-]
+    ]
 
