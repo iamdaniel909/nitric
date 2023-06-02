@@ -31,9 +31,9 @@ public class CatalogueService {
         if (product.getProductName() != null) {
             if (productRepository.findByProductName(product.getProductName()) == null) 
                 return productRepository.save(product);
-            throw new Exeption("Product " + product.getProductName() + " already exists");
+            throw new Exception("Product " + product.getProductName() + " already exists");
         }
-        throw new Exeption("Invalid product name");
+        throw new Exception("Invalid product name");
     }
 
     //Business Logic to get current offer according to the Schoolyear of the Student
