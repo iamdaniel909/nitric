@@ -9,7 +9,7 @@ import ch.fhnw.broom.data.domain.Catalogue;
 import ch.fhnw.broom.data.domain.Order;
 import ch.fhnw.broom.data.domain.Product;
 import ch.fhnw.broom.data.domain.Student; 
-import ch.fhnw.broom.domain.repository.ProductRepository;
+import ch.fhnw.broom.data.repository.ProductRepository;
 
 @Service
 public class CatalogueService {
@@ -27,7 +27,7 @@ public class CatalogueService {
         return productList;
     }
 
-    public Product addProduct(Product product) throws Exeption {
+    public Product addProduct(Product product) throws Exception {
         if (product.getProductName() != null) {
             if (productRepository.findByProductName(product.getProductName()) == null) 
                 return productRepository.save(product);

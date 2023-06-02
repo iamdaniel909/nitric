@@ -15,7 +15,7 @@ import jakarta.annotation.PostConstruct;
 public class Application {
 
 	@Autowired
-	private CatalogueService catalogueService;
+	private CatalogueService CatalogueService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
