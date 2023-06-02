@@ -1,5 +1,7 @@
 package ch.fhnw.broom.data.domain;
 
+import java.util.List;
+
 import java.lang.annotation.Inherited;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
