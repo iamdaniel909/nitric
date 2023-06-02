@@ -9,21 +9,15 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 public class Catalogue {
-    @id
+
+    @Id
     @JsonIgnore
     private Long id;
 
-    @oneToMany(mappedBy = "catalogue")
-    private List<Product> products;
+    @OneToMany(mappedBy = "catalogue")
+    private List<Product> productList;
 
     private String currentOffer;
-
-    public Catalogue() {
-    }
-
-    public Catalogue(String currentOffer) {
-        this.currentOffer = currentOffer;
-    }
 
     public Long getId() {
         return id;
@@ -41,12 +35,12 @@ public class Catalogue {
         this.currentOffer = currentOffer;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<Product> getProductList() {
+        return productList;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
 
     }
 
